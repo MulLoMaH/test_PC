@@ -33,7 +33,7 @@ func handlerINT(w http.ResponseWriter, r *http.Request) {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		for i := 0; i < 3; i++ {
+		for i := 1; i < +3; i++ {
 			time.Sleep(1 * time.Second)
 			if err := json.NewEncoder(w).Encode(map[string]int{"Hallo": i}); err != nil {
 				log.Println("error", err)
